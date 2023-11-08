@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV Files</title>
+</head>
+<body>
+    <h2>Upload CSV Files</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_csv_files">Select CSV Files:</label>
+        <input type="file" name="csv_files" id="id_csv_files" multiple>
+        <br>
+        {{ form.column_to_process.label_tag }}
+        {{ form.column_to_process }}
+        <br>
+        <button type="submit">Process CSV Files</button>
+    </form>
+    
+</body>
+</html>
